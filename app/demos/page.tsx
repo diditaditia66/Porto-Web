@@ -3,10 +3,10 @@ import { headers } from "next/headers";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Demo Data Sensor",
+  title: "Demo Data Sensor — Didit Aditia",
   description:
     "Demo data sensor untuk menampilkan integrasi database dan API. Konten masih dalam pengembangan.",
-  alternates: { canonical: "https://profil.didit-aditia.my.id/demos" },
+  alternates: { canonical: "/demos" },
   openGraph: {
     url: "https://profil.didit-aditia.my.id/demos",
     title: "Demos — Didit Aditia",
@@ -15,11 +15,12 @@ export const metadata: Metadata = {
     images: [{ url: "/og/demos.png", width: 1200, height: 630, alt: "Demos — Didit Aditia" }],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Demos — Didit Aditia",
     images: ["/og/demos.png"],
   },
   robots: {
-    index: false, // <-- set true kalau halaman sudah siap
+    index: false, // ubah ke true kalau halaman sudah siap diindeks
     follow: true,
     googleBot: { index: false, follow: true },
   },
@@ -50,6 +51,9 @@ export default async function DemosPage() {
   return (
     <section className="space-y-8">
       {/* ... kontenmu tetap ... */}
+      <pre className="text-xs bg-neutral-100 dark:bg-neutral-900 p-4 rounded-xl overflow-auto">
+        {JSON.stringify(rows.slice(0, 5), null, 2)}
+      </pre>
     </section>
   );
 }

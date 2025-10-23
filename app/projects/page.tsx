@@ -4,10 +4,10 @@ import ProjectCard from "@/components/ProjectCard";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Proyek Saya",
+  title: "Proyek Saya — Didit Aditia",
   description:
     "Kumpulan proyek terpilih: aplikasi Next.js, integrasi AWS Amplify, dan eksperimen IoT.",
-  alternates: { canonical: "https://profil.didit-aditia.my.id/projects" },
+  alternates: { canonical: "/projects" },
   openGraph: {
     url: "https://profil.didit-aditia.my.id/projects",
     title: "Proyek Saya — Didit Aditia",
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     images: [{ url: "/og/projects.png", width: 1200, height: 630, alt: "Proyek — Didit Aditia" }],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Proyek Saya — Didit Aditia",
     images: ["/og/projects.png"],
   },

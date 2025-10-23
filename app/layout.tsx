@@ -14,6 +14,20 @@ export const metadata: Metadata = {
   },
   description:
     "Portofolio resmi Didit Aditia. Membangun aplikasi web, backend, dan sistem IoT dengan Next.js, Node.js, dan AWS Amplify.",
+  keywords: [
+    "Didit Aditia", "Profil Didit Aditia", "Web Developer", "IoT Engineer",
+    "Next.js", "AWS Amplify", "Portofolio"
+  ],
+  authors: [{ name: "Didit Aditia", url: "https://profil.didit-aditia.my.id" }],
+  creator: "Didit Aditia",
+  publisher: "Didit Aditia",
+  robots: { index: true, follow: true },
+  alternates: { canonical: "/" },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     url: "https://profil.didit-aditia.my.id",
@@ -23,12 +37,7 @@ export const metadata: Metadata = {
       "Portofolio resmi Didit Aditia. Membangun aplikasi web, backend, dan sistem IoT.",
     locale: "id_ID",
     images: [
-      {
-        url: "/og/home.png",
-        width: 1200,
-        height: 630,
-        alt: "Didit Aditia Portofolio",
-      },
+      { url: "/og/home.png", width: 1200, height: 630, alt: "Didit Aditia Portofolio" },
     ],
   },
   twitter: {
@@ -38,7 +47,8 @@ export const metadata: Metadata = {
     title: "Didit Aditia — Developer & IoT Enthusiast",
     images: ["/og/home.png"],
   },
-  robots: { index: true, follow: true },
+  // (opsional) verifikasi Search Console kalau sudah punya token:
+  // verification: { google: "google-site-verification=xxxx" },
 };
 
 function NavLink({
@@ -75,6 +85,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } catch (e) {}
 })();
           `.trim(),
+          }}
+        />
+        {/* JSON-LD Person (global) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Didit Aditia",
+              url: "https://profil.didit-aditia.my.id",
+              sameAs: [
+                "https://github.com/diditaditia66",
+                "https://www.linkedin.com/in/diditaditia66/"
+              ],
+              jobTitle: "Web Developer & IoT Engineer",
+              image: "https://profil.didit-aditia.my.id/og/home.png",
+              description:
+                "Portofolio resmi Didit Aditia yang berfokus pada pengembangan web dan proyek IoT."
+            }),
           }}
         />
       </head>

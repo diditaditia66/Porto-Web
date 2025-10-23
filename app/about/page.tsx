@@ -1,3 +1,4 @@
+// app/about/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,8 +7,8 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Tentang Saya — Didit Aditia",
   description:
-    "Profil profesional Didit Aditia: pengembang fullstack yang berfokus pada integrasi IoT, backend API, dan aplikasi modern dengan Next.js serta Flutter.",
-  alternates: { canonical: "https://profil.didit-aditia.my.id/about" },
+    "Profil profesional Didit Aditia: pengembang fullstack berfokus integrasi IoT, backend API, dan aplikasi modern dengan Next.js serta Flutter.",
+  alternates: { canonical: "/about" },
   openGraph: {
     type: "profile",
     url: "https://profil.didit-aditia.my.id/about",
@@ -21,8 +22,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@diditaditia",
-    creator: "@diditaditia",
     title: "Tentang Saya — Didit Aditia",
     images: ["/og/about.png"],
   },
@@ -47,7 +46,7 @@ const timeline = [
     year: "2024",
     title: "Integrasi Telegram Bot & Node.js Server",
     desc:
-      "Membuat server Node.js untuk menghubungkan perangkat IoT ke Telegram melalui SIM800L, menampilkan data sensor secara real-time, serta menyimpan data ke MongoDB dan Google Sheets.",
+      "Membuat server Node.js untuk menghubungkan perangkat IoT ke Telegram melalui SIM800L, menampilkan data sensor real-time, serta menyimpan data ke MongoDB dan Google Sheets.",
   },
   {
     year: "2023",
@@ -71,8 +70,8 @@ export default function AboutPage() {
           melalui <strong>API, dashboard,</strong> dan <strong>automasi cerdas</strong>.
         </p>
         <p className="text-neutral-600 dark:text-neutral-400 max-w-3xl">
-          Dengan latar belakang di bidang perangkat keras dan pemrograman, saya terbiasa
-          bekerja dari level rendah seperti komunikasi serial antar mikrokontroler,
+          Dengan latar belakang di perangkat keras dan pemrograman, saya terbiasa
+          bekerja dari level rendah (komunikasi serial antar mikrokontroler),
           hingga pengembangan aplikasi penuh dengan <strong>Next.js</strong>,
           <strong> Flutter</strong>, dan <strong>Node.js</strong>. Tujuan saya sederhana:
           membuat sistem yang efisien, mudah digunakan, dan benar-benar berguna.
@@ -165,7 +164,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* JSON-LD Person (opsional) */}
+      {/* JSON-LD Person (khusus halaman ini, melengkapi yang global) */}
       <Script
         id="ld-person"
         type="application/ld+json"
@@ -174,7 +173,7 @@ export default function AboutPage() {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Didit Aditia",
-            url: "https://profil.didit-aditia.my.id",
+            url: "https://profil.didit-aditia.my.id/about",
             sameAs: ["https://github.com/diditaditia66"],
             jobTitle: "Software Developer",
           }),
