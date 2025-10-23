@@ -4,9 +4,31 @@ import type { Metadata, Route } from "next";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
-  title: "Portofolio Didit Aditia",
+  metadataBase: new URL("https://profil.didit-aditia.my.id"),
+  title: {
+    default: "Didit Aditia — Developer & IoT Enthusiast",
+    template: "%s | Didit Aditia",
+  },
   description:
-    "Menampilkan berbagai proyek, demo langsung, dan aplikasi backend yang telah dibuat.",
+    "Portofolio resmi Didit Aditia. Membangun aplikasi web, backend, dan sistem IoT dengan Next.js, Node.js, dan AWS Amplify.",
+  openGraph: {
+    type: "website",
+    url: "https://profil.didit-aditia.my.id",
+    siteName: "Didit Aditia",
+    title: "Didit Aditia — Developer & IoT Enthusiast",
+    description:
+      "Portofolio resmi Didit Aditia. Membangun aplikasi web, backend, dan sistem IoT.",
+    locale: "id_ID",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Didit Aditia Portofolio" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@diditaditia",
+    creator: "@diditaditia",
+    title: "Didit Aditia — Developer & IoT Enthusiast",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
 function NavLink({
@@ -26,11 +48,7 @@ function NavLink({
   );
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id" className="scroll-smooth">
       {/* Anti-flicker: set kelas 'dark' seawal mungkin */}
@@ -105,15 +123,9 @@ export default function RootLayout({
               © {new Date().getFullYear()} Didit Aditia • Dibangun dengan Next.js • Dihost di AWS Amplify
             </p>
             <div className="flex items-center gap-4">
-              <Link href={"/about" as Route} className="hover:underline">
-                Tentang
-              </Link>
-              <Link href={"/projects" as Route} className="hover:underline">
-                Proyek
-              </Link>
-              <Link href={"/demos" as Route} className="hover:underline">
-                Demo
-              </Link>
+              <Link href={"/about" as Route} className="hover:underline">Tentang</Link>
+              <Link href={"/projects" as Route} className="hover:underline">Proyek</Link>
+              <Link href={"/demos" as Route} className="hover:underline">Demo</Link>
               <a
                 href="https://github.com/diditaditia66"
                 target="_blank"
