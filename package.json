@@ -4,17 +4,21 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "postbuild": "next-sitemap",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "typecheck": "tsc --noEmit",
+    "sitemap": "next-sitemap",
+    "postbuild": "npm run sitemap"
   },
   "dependencies": {
     "next": "14.2.5",
     "next-sitemap": "^4.2.3",
     "pg": "^8.11.5",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@types/node": "^20.12.8",

@@ -2,5 +2,7 @@
 module.exports = {
   siteUrl: 'https://profil.didit-aditia.my.id',
   generateRobotsTxt: true,
-  sitemapSize: 7000,
+  exclude: ['/api/*'],
+  changefreq: 'weekly',
+  priority: 0.7,
 };

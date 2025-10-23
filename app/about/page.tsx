@@ -1,11 +1,31 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Tentang Saya — Didit Aditia",
   description:
     "Profil profesional Didit Aditia: pengembang fullstack yang berfokus pada integrasi IoT, backend API, dan aplikasi modern dengan Next.js serta Flutter.",
+  alternates: { canonical: "https://profil.didit-aditia.my.id/about" },
+  openGraph: {
+    type: "profile",
+    url: "https://profil.didit-aditia.my.id/about",
+    siteName: "Didit Aditia",
+    title: "Tentang Saya — Didit Aditia",
+    description:
+      "Latar belakang & keahlian: Next.js, AWS Amplify, IoT, backend API, Flutter.",
+    images: [
+      { url: "/og/about.png", width: 1200, height: 630, alt: "Tentang Saya — Didit Aditia" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@diditaditia",
+    creator: "@diditaditia",
+    title: "Tentang Saya — Didit Aditia",
+    images: ["/og/about.png"],
+  },
 };
 
 const skills = [
@@ -144,6 +164,22 @@ export default function AboutPage() {
           </Link>
         </div>
       </div>
+
+      {/* JSON-LD Person (opsional) */}
+      <Script
+        id="ld-person"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Didit Aditia",
+            url: "https://profil.didit-aditia.my.id",
+            sameAs: ["https://github.com/diditaditia66"],
+            jobTitle: "Software Developer",
+          }),
+        }}
+      />
     </section>
   );
 }

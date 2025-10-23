@@ -1,5 +1,25 @@
+// app/projects/page.tsx
 import data from "@/data/projects.json";
 import ProjectCard from "@/components/ProjectCard";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Proyek Saya",
+  description:
+    "Kumpulan proyek terpilih: aplikasi Next.js, integrasi AWS Amplify, dan eksperimen IoT.",
+  alternates: { canonical: "https://profil.didit-aditia.my.id/projects" },
+  openGraph: {
+    url: "https://profil.didit-aditia.my.id/projects",
+    title: "Proyek Saya — Didit Aditia",
+    description:
+      "Web apps Next.js, backend API, dan projek IoT yang pernah saya bangun.",
+    images: [{ url: "/og/projects.png", width: 1200, height: 630, alt: "Proyek — Didit Aditia" }],
+  },
+  twitter: {
+    title: "Proyek Saya — Didit Aditia",
+    images: ["/og/projects.png"],
+  },
+};
 
 export const dynamic = "force-static";
 
