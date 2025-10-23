@@ -3,6 +3,21 @@
   <url>
     <loc>https://profil.didit-aditia.my.id/</loc>
     <lastmod>2025-10-23</lastmod>
-    <priority>1.00</priority>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://profil.didit-aditia.my.id/about</loc>
+    <lastmod>2025-10-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://profil.didit-aditia.my.id/projects</loc>
+    <lastmod>2025-10-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://profil.didit-aditia.my.id/contact</loc>
+    <lastmod>2025-10-23</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>
