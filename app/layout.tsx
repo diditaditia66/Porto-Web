@@ -1,6 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
-import type { Metadata, Route } from "next"; // <-- pakai Route untuk typed routes
+import type { Metadata, Route } from "next";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ function NavLink({
   href,
   children,
 }: {
-  href: Route; // <-- ubah dari string ke Route
+  href: Route;
   children: React.ReactNode;
 }) {
   return (
@@ -46,7 +46,7 @@ export default function RootLayout({
     document.documentElement.classList.toggle('dark', isDark);
   } catch (e) {}
 })();
-`.trim(),
+          `.trim(),
           }}
         />
       </head>
@@ -58,7 +58,7 @@ export default function RootLayout({
             <div className="flex h-16 items-center justify-between">
               {/* Logo */}
               <Link
-                href="/"
+                href={"/" as Route}
                 className="inline-flex items-center gap-2 rounded-2xl px-2 py-1 font-semibold tracking-tight hover:bg-neutral-100/70 dark:hover:bg-white/10"
               >
                 <span className="inline-block h-2 w-2 rounded-full bg-neutral-900 dark:bg-white" />
@@ -67,9 +67,10 @@ export default function RootLayout({
 
               {/* Navigasi */}
               <nav className="hidden gap-1 md:flex">
-                <NavLink href="/">Beranda</NavLink>
-                <NavLink href="/projects">Proyek</NavLink>
-                <NavLink href="/demos">Demo</NavLink>
+                <NavLink href={"/" as Route}>Beranda</NavLink>
+                <NavLink href={"/about" as Route}>Tentang</NavLink>
+                <NavLink href={"/projects" as Route}>Proyek</NavLink>
+                <NavLink href={"/demos" as Route}>Demo</NavLink>
                 <a
                   href="https://github.com/diditaditia66"
                   target="_blank"
@@ -104,10 +105,13 @@ export default function RootLayout({
               © {new Date().getFullYear()} Didit Aditia • Dibangun dengan Next.js • Dihost di AWS Amplify
             </p>
             <div className="flex items-center gap-4">
-              <Link href="/projects" className="hover:underline">
+              <Link href={"/about" as Route} className="hover:underline">
+                Tentang
+              </Link>
+              <Link href={"/projects" as Route} className="hover:underline">
                 Proyek
               </Link>
-              <Link href="/demos" className="hover:underline">
+              <Link href={"/demos" as Route} className="hover:underline">
                 Demo
               </Link>
               <a
