@@ -1,7 +1,10 @@
+// app/layout.tsx
 import "./globals.css";
 import Link from "next/link";
 import type { Metadata, Route } from "next";
 import ThemeToggle from "@/components/ThemeToggle";
+import PageTransition from "@/components/ui/PageTransition";
+import ContactMenu from "@/components/ContactMenu";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://profil.didit-aditia.my.id"),
@@ -19,14 +22,21 @@ export const metadata: Metadata = {
     description:
       "Portofolio resmi Didit Aditia. Membangun aplikasi web, backend, dan sistem IoT.",
     locale: "id_ID",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Didit Aditia Portofolio" }],
+    images: [
+      {
+        url: "/og/home.png",
+        width: 1200,
+        height: 630,
+        alt: "Didit Aditia Portofolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@diditaditia",
     creator: "@diditaditia",
     title: "Didit Aditia — Developer & IoT Enthusiast",
-    images: ["/og-image.jpg"],
+    images: ["/og/home.png"],
   },
   robots: { index: true, follow: true },
 };
@@ -69,9 +79,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
 
-      <body className="min-h-screen antialiased bg-gradient-to-b from-neutral-50 to-white dark:from-black dark:to-neutral-950 text-neutral-900 dark:text-neutral-100">
+      <body className="min-h-screen antialiased bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-black text-neutral-900 dark:text-neutral-100">
         {/* Header */}
-        <header className="sticky top-0 z-40 border-b border-neutral-200/60 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-white/10 dark:bg-black/40">
+        <header className="sticky top-0 z-40 border-b border-neutral-300/80 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-[0_1px_0_rgba(0,0,0,0.04)] dark:border-white/20 dark:bg-black/50 dark:shadow-[0_1px_0_rgba(255,255,255,0.06)]">
           <div className="mx-auto max-w-6xl px-4">
             <div className="flex h-16 items-center justify-between">
               {/* Logo */}
@@ -102,30 +112,35 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {/* Aksi kanan */}
               <div className="flex items-center gap-2">
                 <ThemeToggle />
-                <a
-                  href="mailto:diditaditia333@gmail.com"
-                  className="hidden md:inline-flex items-center gap-2 rounded-2xl border border-neutral-300 bg-white px-4 py-2 text-sm font-medium shadow-sm hover:shadow transition-all hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/10"
-                >
-                  Hubungi Saya
-                </a>
+                <div className="hidden md:block">
+                  <ContactMenu />
+                </div>
               </div>
             </div>
           </div>
         </header>
 
-        {/* Konten Utama */}
-        <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
+        {/* Konten Utama (dengan transisi halaman) */}
+        <main className="mx-auto max-w-6xl px-4 py-10">
+          <PageTransition>{children}</PageTransition>
+        </main>
 
         {/* Footer */}
-        <footer className="border-t border-neutral-200/60 py-10 text-sm text-neutral-600 dark:border-white/10 dark:text-neutral-400">
+        <footer className="border-t border-neutral-300/80 py-10 text-sm text-neutral-600 dark:border-white/15 dark:text-neutral-400">
           <div className="mx-auto max-w-6xl px-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <p>
               © {new Date().getFullYear()} Didit Aditia • Dibangun dengan Next.js • Dihost di AWS Amplify
             </p>
             <div className="flex items-center gap-4">
-              <Link href={"/about" as Route} className="hover:underline">Tentang</Link>
-              <Link href={"/projects" as Route} className="hover:underline">Proyek</Link>
-              <Link href={"/demos" as Route} className="hover:underline">Demo</Link>
+              <Link href={"/about" as Route} className="hover:underline">
+                Tentang
+              </Link>
+              <Link href={"/projects" as Route} className="hover:underline">
+                Proyek
+              </Link>
+              <Link href={"/demos" as Route} className="hover:underline">
+                Demo
+              </Link>
               <a
                 href="https://github.com/diditaditia66"
                 target="_blank"

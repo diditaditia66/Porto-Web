@@ -1,6 +1,14 @@
 // app/page.tsx
 import Link from "next/link";
 import type { Metadata } from "next";
+import data from "@/data/projects.json";
+import ProjectCard from "@/components/ProjectCard";
+
+// Komponen client
+import HomeHero from "@/components/home/HomeHero";
+import QuickLinks from "@/components/home/QuickLinks";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
+import CtaStrip from "@/components/home/CtaStrip";
 
 export const metadata: Metadata = {
   title: "Beranda",
@@ -21,16 +29,25 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const featured = (data as any[]).slice(0, 3);
+
   return (
-    <section className="space-y-6">
-      <h1 className="text-3xl md:text-4xl font-bold">Hi, I build things. 👋</h1>
-      <p className="text-lg opacity-80">
-        This is a starter portfolio on AWS Amplify + Next.js. Add your bio, skills, and links.
-      </p>
-      <div className="flex gap-3">
-        <Link href="/projects" className="rounded-xl border px-4 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-900">View Projects</Link>
-        <Link href="/demos" className="rounded-xl border px-4 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-900">Live Demos</Link>
+    <section className="space-y-12">
+      <HomeHero />
+
+      <QuickLinks />
+
+      <div className="space-y-4">
+        <div className="flex items-end justify-between">
+          <h2 className="text-xl font-semibold">Proyek Terbaru</h2>
+          <Link href="/projects" className="text-sm underline underline-offset-4 hover:opacity-80">
+            Lihat semua
+          </Link>
+        </div>
+        <FeaturedProjects projects={featured} />
       </div>
+
+      <CtaStrip />
     </section>
   );
 }
