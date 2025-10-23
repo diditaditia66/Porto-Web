@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "ESKF Filtering",
+    "summary": "Implementasi Extended State Kalman Filter untuk pengolahan data sensor dan estimasi posisi secara real-time.",
+    "stack": ["Python", "NumPy", "Matplotlib"],
+    "github": "https://github.com/diditaditia66/eskf_filtering",
+    "demo": null
+  },
+  {
+    "id": 2,
+    "title": "Temperature Prediction Web",
+    "summary": "Aplikasi web untuk memprediksi suhu menggunakan model machine learning. Menampilkan grafik prediksi suhu secara interaktif.",
+    "stack": ["React", "Flask", "Python", "TensorFlow"],
+    "github": "https://github.com/diditaditia66/temperature-prediction-web",
+    "demo": null
+  },
+  {
+    "id": 3,
+    "title": "Temperature Prediction App",
+    "summary": "Aplikasi mobile berbasis Flutter untuk memprediksi suhu harian menggunakan model pembelajaran mesin.",
+    "stack": ["Flutter", "Dart", "TensorFlow Lite"],
+    "github": "https://github.com/diditaditia66/temperature-prediction-app",
+    "demo": null
+  }
+]
