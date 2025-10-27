@@ -1,26 +1,50 @@
 [
   {
     "id": 1,
-    "title": "ESKF Filtering",
-    "summary": "Implementasi Extended State Kalman Filter untuk pengolahan data sensor dan estimasi posisi secara real-time.",
-    "stack": ["Python", "NumPy", "Matplotlib"],
-    "github": "https://github.com/diditaditia66/eskf_filtering",
-    "demo": null
+    "title": "Gudang Web",
+    "summary": "Frontend Next.js untuk sistem pendataan barang gudang. Terintegrasi dengan REST API berbasis Flask untuk login, manajemen barang (tambah/ambil/hapus), dan riwayat transaksi. Deploy di AWS Amplify.",
+    "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Axios", "AWS Amplify", "Flask API"],
+    "github": "https://github.com/diditaditia66/Gudang-Web",
+    "demo": "https://gudang.didit-aditia.my.id/"
   },
   {
     "id": 2,
-    "title": "Temperature Prediction Web",
-    "summary": "Aplikasi web untuk memprediksi suhu menggunakan model machine learning. Menampilkan grafik prediksi suhu secara interaktif.",
-    "stack": ["React", "Flask", "Python", "TensorFlow"],
-    "github": "https://github.com/diditaditia66/temperature-prediction-web",
-    "demo": null
+    "title": "Trek Safe Web",
+    "summary": "Aplikasi web untuk kebutuhan pendakian: pendaftaran/booking, manajemen jalur, dan visualisasi peta. Disiapkan untuk deploy di AWS Amplify (Gen 2, React + Vite).",
+    "stack": ["React", "Vite", "AWS Amplify"],
+    "github": "https://github.com/diditaditia66/Trek-Safe-Web-Version",
+    "demo": "https://trek-safe.didit-aditia.my.id/"
   },
   {
     "id": 3,
+    "title": "Temperature Prediction Web",
+    "summary": "Aplikasi web prediksi suhu harian berbasis machine learning. Backend Python/Flask dengan model TensorFlow; menampilkan grafik hasil prediksi secara interaktif.",
+    "stack": ["React", "Flask", "Python", "TensorFlow"],
+    "github": "https://github.com/diditaditia66/temperature-prediction-web",
+    "demo": "https://app.diditserver.my.id/"
+  },
+  {
+    "id": 4,
+    "title": "Gudang App",
+    "summary": "Aplikasi mobile untuk pendataan barang gudang: login, input & update stok, serta pencatatan riwayat. Terintegrasi dengan backend API.",
+    "stack": ["Flutter", "Dart"],
+    "github": "https://github.com/diditaditia66/Gudang-App",
+    "demo": null
+  },
+  {
+    "id": 5,
+    "title": "Trek Safe App",
+    "summary": "Aplikasi mobile untuk pendakian: pendaftaran/booking dan utilitas lapangan (pelacakan lokasi & peta offline/online).",
+    "stack": ["Flutter", "Dart"],
+    "github": "https://github.com/diditaditia66/Trek-Safe-Apk-Version",
+    "demo": null
+  },
+  {
+    "id": 6,
     "title": "Temperature Prediction App",
-    "summary": "Aplikasi mobile berbasis Flutter untuk memprediksi suhu harian menggunakan model pembelajaran mesin.",
+    "summary": "Aplikasi Flutter untuk memprediksi suhu menggunakan model ML on-device dan visualisasi sederhana.",
     "stack": ["Flutter", "Dart", "TensorFlow Lite"],
-    "github": "https://github.com/diditaditia66/temperature-prediction-app",
+    "github": "https://github.com/diditaditia66/temperature-prediction-apk",
     "demo": null
   }
 ]
