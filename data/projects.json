@@ -1,6 +1,14 @@
 [
   {
     "id": 1,
+    "title": "HikeMate",
+    "summary": "Aplikasi web untuk membantu perencanaan pendakian, termasuk pendataan logistik, budgeting, pembuatan Rencana Operasional Perjalanan (ROP), dan pembuatan Trip. Backend menggunakan AWS EC2 dan AWS Aurora RDS PostgreSQL. Autentikasi menggunakan AWS Cognito.",
+    "stack": ["React", "AWS Amplify", "AWS Cognito", "AWS EC2", "AWS Aurora RDS", "PostgreSQL"],
+    "github": "https://github.com/diditaditia66/HikeMate",
+    "demo": "https://hikemate.didit-aditia.my.id/"
+  },
+  {
+    "id": 2,
     "title": "Gudang Web",
     "summary": "Frontend Next.js untuk sistem pendataan barang gudang. Terintegrasi dengan REST API berbasis Flask untuk login, manajemen barang (tambah/ambil/hapus), dan riwayat transaksi. Deploy di AWS Amplify.",
     "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Axios", "AWS Amplify", "Flask API"],
@@ -8,7 +16,7 @@
     "demo": "https://gudang.didit-aditia.my.id/"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Trek Safe Web",
     "summary": "Aplikasi web untuk kebutuhan pendakian: pendaftaran/booking, manajemen jalur, dan visualisasi peta. Disiapkan untuk deploy di AWS Amplify (Gen 2, React + Vite).",
     "stack": ["React", "Vite", "AWS Amplify"],
@@ -16,7 +24,7 @@
     "demo": "https://trek-safe.didit-aditia.my.id/"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Temperature Prediction Web",
     "summary": "Aplikasi web prediksi suhu harian berbasis machine learning. Backend Python/Flask dengan model TensorFlow; menampilkan grafik hasil prediksi secara interaktif.",
     "stack": ["React", "Flask", "Python", "TensorFlow"],
@@ -24,7 +32,7 @@
     "demo": "https://app.diditserver.my.id/"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Gudang App",
     "summary": "Aplikasi mobile untuk pendataan barang gudang: login, input & update stok, serta pencatatan riwayat. Terintegrasi dengan backend API.",
     "stack": ["Flutter", "Dart"],
@@ -32,7 +40,7 @@
     "demo": null
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Trek Safe App",
     "summary": "Aplikasi mobile untuk pendakian: pendaftaran/booking dan utilitas lapangan (pelacakan lokasi & peta offline/online).",
     "stack": ["Flutter", "Dart"],
@@ -40,7 +48,7 @@
     "demo": null
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Temperature Prediction App",
     "summary": "Aplikasi Flutter untuk memprediksi suhu menggunakan model ML on-device dan visualisasi sederhana.",
     "stack": ["Flutter", "Dart", "TensorFlow Lite"],
